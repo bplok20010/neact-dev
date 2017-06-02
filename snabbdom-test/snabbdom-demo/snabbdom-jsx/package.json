@@ -1,0 +1,61 @@
+{
+  "name": "snabbdom-jsx",
+  "version": "0.3.1",
+  "description": "Write snabbdom views using JSX and Babel",
+  "main": "snabbdom-jsx.js",
+  "scripts": {
+    "test": "babel-node test.js | tap-spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yelouafi/snabbdom-jsx.git"
+  },
+  "keywords": [
+    "snabbdom",
+    "virtual-dom",
+    "jsx"
+  ],
+  "author": {
+    "name": "Yassine Elouafi",
+    "email": "yelouafi@gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yelouafi/snabbdom-jsx/issues"
+  },
+  "homepage": "https://github.com/yelouafi/snabbdom-jsx",
+  "devDependencies": {
+    "babel-cli": "^6.1.18",
+    "babel-preset-es2015": "^6.1.2",
+    "babel-preset-react": "^6.1.2",
+    "babel-preset-stage-2": "^6.1.2",
+    "tap-spec": "^4.1.0",
+    "tape": "^4.0.3"
+  },
+  "gitHead": "57dfdee7490f9fb362ec97c5767d61473c51287c",
+  "_id": "snabbdom-jsx@0.3.1",
+  "_shasum": "3a8c58fd88da4b76a472c0ffd2f30566a5c3c172",
+  "_from": "snabbdom-jsx@*",
+  "_npmVersion": "3.10.3",
+  "_nodeVersion": "6.3.0",
+  "_npmUser": {
+    "name": "yelouafi",
+    "email": "yelouafi@gmail.com"
+  },
+  "dist": {
+    "shasum": "3a8c58fd88da4b76a472c0ffd2f30566a5c3c172",
+    "tarball": "https://registry.npmjs.org/snabbdom-jsx/-/snabbdom-jsx-0.3.1.tgz"
+  },
+  "maintainers": [
+    {
+      "name": "yelouafi",
+      "email": "yelouafi@gmail.com"
+    }
+  ],
+  "_npmOperationalInternal": {
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/snabbdom-jsx-0.3.1.tgz_1472221373503_0.2892931941896677"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/snabbdom-jsx/-/snabbdom-jsx-0.3.1.tgz"
+}

@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Neact Tree</title>
+    <script src="../../dist/Neact.js"></script>
+</head>
+
+<body>
+    <style>
+        .a {
+            border: 1px solid red;
+            background: #FAC5C5
+        }
+        
+        .b {
+            border: 1px solid green;
+            background: #A4F9AC
+        }
+    </style>
+    <div id="list"></div>
+    <div id="placeholder"></div>
+    <div id="tree"></div>
+    <script>
+        var isInit = true;
+        var sTotal = 0;
+        var tMap = {};
+        var stop = true;
+        var sNow = function() {
+            return +new Date();
+        }
+        if (!console.time) {
+            console.time = function(a) {
+                tMap[a] = sNow()
+            };
+            console.timeEnd = function(a) {
+                console.log(-tMap[a] + sNow())
+            };
+        }
+    </script>
+    <script src="index.js"></script>
+</body>
+
+</html>

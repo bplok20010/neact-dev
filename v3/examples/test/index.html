@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Event-Fix</title>
+</head>
+
+<body>
+    <div id="demo">
+    	<button id="btn">ffff</button>
+    </div>
+    <script>
+        if( btn.addEventListener ) {
+			btn.addEventListener('click', function(e){
+				console.dir(e);
+			}, false)
+		} else {
+			console.log(12)
+			btn.attachEvent('onclick',function(e){
+				console.dir(e);
+			});	
+		}
+    </script>
+</body>
+
+</html>

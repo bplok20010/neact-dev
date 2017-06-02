@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Hello snabbdom</title>
+  </head>
+  <body>
+  
+  	<div id="d1" style="border:1px solid red; padding:5px;"></div>
+    <div id="d2" style="border:1px solid red; padding:5px;"></div>
+  	
+  </body>
+  <script>
+  	var df = document.createDocumentFragment();
+	var div1 = document.createElement('div');
+	var text1 = document.createTextNode('nobo');
+	div1.appendChild(text1);
+	var div2 = document.createElement('div');
+	var text2 = document.createTextNode('nobo');
+	div2.appendChild(text2);
+	df.appendChild(div1);
+	df.appendChild(div2);
+	
+	d1.appendChild(df);
+  </script>
+</html>

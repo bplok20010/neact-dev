@@ -1,0 +1,193 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Neact Form example</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .form {
+            min-width: 400px;
+            margin: 20px;
+            overflow: hidden;
+            border: 1px solid #999;
+            background: #eee;
+            padding: 20px;
+            font-family: Arial;
+        }
+        
+        .form-group {
+            display: block;
+            overflow: hidden;
+            position: relative;
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            font-size: 16px;
+            color: #444;
+            margin-bottom: 5px;
+        }
+        
+        .form-group input {
+            display: block;
+            margin-top: 5px;
+            font-size: 14px;
+            padding: 5px;
+        }
+        
+        .form-group .inline input {
+            display: inline-block;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app"></div>
+    <script src="../../dist/Neact.min.js"></script>
+    <script>
+        var h = Neact.createElement;
+
+        var firstName = 'Dominic';
+        var lastName = 'Gannaway';
+        var age = 28;
+        var description = 'I don\'t know?';
+
+        function linkedTextHandler(e) {
+            var val = e.target.value;
+
+            firstName = val;
+            render()
+        }
+
+        function textHandler(e) {
+            var val = e.target.value;
+
+            lastName = val;
+            render()
+        }
+
+        function numberHandler(e) {
+            var val = e.target.value;
+
+            age = val;
+            render()
+        }
+
+        function descHandler(e) {
+            var val = e.target.value;
+
+            description = val;
+            render()
+        }
+
+        function handvaroggle(e) {
+            console.log('Checkbox clicked!')
+        }
+
+        function render() {
+            Neact.render(h('form', {
+                className: 'form'
+            }, [
+                h('div', {
+                    className: 'form-group'
+                }, [
+                    h('label', null, 'Please enter your first name name:' + firstName),
+                    h('input', {
+                        type: 'text',
+                        placeholder: 'Joe',
+                        value: firstName,
+                        onInput: function(e) {
+                            linkedTextHandler(e)
+                        }
+                    })
+                ]),
+                h('div', {
+                    className: 'form-group'
+                }, [
+                    h('label', null, 'Please enter your first last name:' + lastName),
+                    h('input', {
+                        type: 'text',
+                        placeholder: 'Bloggs',
+                        value: lastName,
+                        onInput: textHandler
+                    })
+                ]),
+                h('div', {
+                    className: 'form-group'
+                }, [
+                    h('label', null, 'Please enter your age:' + age),
+                    h('input', {
+                        type: 'number',
+                        value: age,
+                        min: 0,
+                        max: 99,
+                        onInput: numberHandler
+                    })
+                ]),
+                h('div', {
+                    className: 'form-group'
+                }, [
+                    h('label', null, 'What is your favourite food:'),
+                    h('div', {
+                        className: 'inline'
+                    }, [
+                        h('input', {
+                            type: 'radio',
+                            name: 'food',
+                            checked: false,
+                            onClick: handvaroggle
+                        }),
+                        h('span', null, 'Pizza')
+                    ]),
+                    h('div', {
+                        className: 'inline'
+                    }, [
+                        h('input', {
+                            type: 'radio',
+                            name: 'food',
+                            checked: true,
+                            onClick: handvaroggle
+                        }),
+                        h('span', null, 'Pasta')
+                    ])
+                ]),
+                h('div', {
+                    className: 'form-group'
+                }, [
+                    h('label', null, 'Please enter your location:'),
+                    h('select', {
+                        value: 'United Kingdom'
+                    }, [
+                        h('option', {
+                            selected: false
+                        }, 'United States'),
+                        h('option', {
+                            selected: true
+                        }, 'United Kingdom'),
+                        h('option', {
+                            selected: false
+                        }, 'France')
+                    ])
+                ]),
+                h('div', {
+                    className: 'form-group'
+                }, [
+                    h('label', null, 'Please enter a description:' + description),
+                    h('textarea', {
+                        value: description,
+                        onInput: descHandler
+                    })
+                ]),
+            ]), document.getElementById('app'));
+        }
+        render();
+    </script>
+</body>
+
+</html>
